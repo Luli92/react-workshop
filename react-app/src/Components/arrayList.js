@@ -4,15 +4,12 @@ import ArrayItem from "./arrayItem";
 function ArrayList(props) {
   console.log(props.arr, "props from app.js");
   // ArrayList kommer åt propertyn och skickar vidare till ArrayItem
+  const { arr } = props; // Destructurar, samma sak som props.arr
 
   return (
     <div>
-      {props.arr.map((nr, index) => {
-        return (
-          <ArrayItem key={index} nr={nr}>
-            <h1>hej</h1>
-          </ArrayItem>
-        );
+      {arr.map((nr, index) => {
+        return <ArrayItem key={index} nr={nr}></ArrayItem>;
       })}
     </div>
   );
